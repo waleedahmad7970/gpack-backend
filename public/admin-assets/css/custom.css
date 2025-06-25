@@ -1,0 +1,76 @@
+.preloader-wrap {
+    background: #fff none repeat scroll 0 0;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    text-align: center;
+    transition: opacity ease 2s;
+}
+.d-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.d-table .d-tablecell {
+    display: table-cell;
+    vertical-align: middle;
+}
+.rating-color {
+    color: #fbc634 !important
+}
+.small-ratings i {
+    color: #cecece
+}
+.text-opacity-75 {
+    opacity: 0.7 !important;
+}
+.text-opacity-50 {
+    opacity: 0.5 !important;
+}
+.text-opacity-25 {
+    opacity: 0.2 !important;
+}
+body.light-sidebar .left-sidebar {
+    background-color: #f8f9fb;
+}
+body.light-sidebar .left-sidebar .brand {
+    background-color: #f8f9fb;
+    border-bottom: 1px solid #f8f9fb;
+}
+body.light-sidebar .left-sidebar .brand .logo .logo-lg {
+    display: none;
+}
+body.light-sidebar .left-sidebar .brand .logo .logo-light {
+    display: inline-block;
+}
+body.light-sidebar .left-sidebar .menu-body .nav-item .nav-link {
+    color: #303e67;
+}
+body.light-sidebar .left-sidebar .menu-body .nav-item .nav-link .menu-icon {
+    color: #545d7b;
+}
+body.light-sidebar .left-sidebar .navbar-vertical .navbar-nav .nav-link[data-bs-toggle=collapse][aria-expanded=true] {
+    color: #303e67;
+    background-color: rgba(204, 209, 224, 0.03);
+}
+body.light-sidebar .left-sidebar .navbar-vertical .navbar-nav .nav-link[data-bs-toggle=collapse][aria-expanded=true] .menu-icon {
+    color: #303e67;
+}
+body.light-sidebar.enlarge-menu .left-sidebar .brand .logo .logo-lg {
+    display: none;
+}
+body.light-sidebar.enlarge-menu .left-sidebar .menu-label {
+    border: 1px solid rgba(204, 209, 224, 0.05);
+}
+body.light-sidebar.enlarge-menu .left-sidebar:hover .brand .logo .logo-lg {
+    display: none;
+}
+body.light-sidebar.enlarge-menu .left-sidebar:hover .brand .logo .logo-light {
+    display: inline-block;
+}
+body.light-sidebar.enlarge-menu .left-sidebar:hover .menu-label {
+    border: 1px solid transparent;
+}
