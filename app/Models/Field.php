@@ -27,4 +27,14 @@ class Field extends Model
     {
         return $this->belongsToMany(Team::class, 'team_fields');
     }
+
+    /*
+    |--------------------------------------------------------------------------
+    | SCOPES
+    |--------------------------------------------------------------------------
+    */
+    public function scopeSort($query, $value)
+    {
+        return $query->orderBy('name', $value);
+    }
 }

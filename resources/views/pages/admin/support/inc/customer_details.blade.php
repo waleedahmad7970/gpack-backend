@@ -17,7 +17,7 @@
                 <th class="w-25">Status</th>
                 <td>
                     @if($ticket->is_read == 1)
-                        <span class="text-success">Replied</span>
+                        <span class="text-success">Read</span>
                     @else
                         <span class="text-warning">Pending</span>
                     @endif
@@ -26,7 +26,7 @@
             <tr>
                 <th class="w-25">Date</th>
                 <td>
-                    {{ $ticket->created_at }}
+                    {{ \Carbon\Carbon::parse($ticket->created_at)->toFormattedDateString() }}
                 </td>
             </tr>
         </table>

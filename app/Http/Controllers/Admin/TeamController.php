@@ -35,7 +35,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        $fields = Field::all();
+        $fields = Field::sort('asc')->get();
 
         return view('pages.admin.team.create', [
             'fields' => $fields
@@ -109,7 +109,7 @@ class TeamController extends Controller
             abort(404);
         }
 
-        $fields = Field::all();
+        $fields = Field::sort('asc')->get();
 
         // field ids
         if(count($member->fields) > 0) {

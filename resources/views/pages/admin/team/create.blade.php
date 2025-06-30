@@ -37,7 +37,7 @@
 
 @section('content')
 
-    @include('layouts.partials._breadcrumb', ['title' => "Create Team Member", 'page' => 'Team Member Create'])
+    @include('layouts.partials._breadcrumb', ['title' => 'Create Team Member', 'section' => 'Teams', 'page' => 'Create'])
 
     @if(session()->has('success'))
         <div class="alert alert-success border-0 alert-dismissible fade show" role="alert">
@@ -71,15 +71,15 @@
                                 <label for="prefix" class="form-label fw-bold">Prefix <span class="text-danger">*</span></label>
                                 <select name="prefix" id="prefix" class="form-select" required>
                                     <option value="">Select Prefix</option>
-                                    <option value="Mr">Mr</option>
-                                    <option value="Mrs">Mrs</option>
-                                    <option value="Miss">Miss</option>
-                                    <option value="Ms">Ms</option>
-                                    <option value="Mx">Mx</option>
-                                    <option value="Dr">Dr</option>
-                                    <option value="Sir">Sir</option>
-                                    <option value="Lady">Lady</option>
-                                    <option value="Lord">Lord</option>
+                                    <option value="Mr" {{ old('prefix') == 'Mr' ? 'selected' : '' }}>Mr</option>
+                                    <option value="Mrs" {{ old('prefix') == 'Mrs' ? 'selected' : '' }}>Mrs</option>
+                                    <option value="Miss" {{ old('prefix') == 'Miss' ? 'selected' : '' }}>Miss</option>
+                                    <option value="Ms" {{ old('prefix') == 'Ms' ? 'selected' : '' }}>Ms</option>
+                                    <option value="Mx" {{ old('prefix') == 'Mx' ? 'selected' : '' }}>Mx</option>
+                                    <option value="Dr" {{ old('prefix') == 'Dr' ? 'selected' : '' }}>Dr</option>
+                                    <option value="Sir" {{ old('prefix') == 'Sir' ? 'selected' : '' }}>Sir</option>
+                                    <option value="Lady" {{ old('prefix') == 'Lady' ? 'selected' : '' }}>Lady</option>
+                                    <option value="Lord" {{ old('prefix') == 'Lord' ? 'selected' : '' }}>Lord</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Prefix is a required field.
@@ -103,8 +103,8 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <label for="expertise" class="form-label fw-bold">Expertise <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="expertise" name="expertise" value="{{ old('expertise') }}" placeholder="Enter expertise" required />
+                                <label for="expertise" class="form-label fw-bold">Expertise </label>
+                                <input type="text" class="form-control" id="expertise" name="expertise" value="{{ old('expertise') }}" placeholder="Enter expertise" />
                                 <small class="form-text text-muted">e.g. Policy Design Expert, Implementation Lead etc</small>
                             </div>
                         </div>

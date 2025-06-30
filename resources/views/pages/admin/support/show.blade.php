@@ -5,7 +5,7 @@
 
 @section('content')
 
-    @include('layouts.partials.admin._breadcrumb', ['title' => "Details", 'section' => "Customer Support", 'page' => 'Details'])
+    @include('layouts.partials._breadcrumb', ['title' => "Details", 'section' => "Customer Support", 'page' => 'Details'])
 
     @if(session()->has('success'))
         <div class="alert alert-success border-0 alert-dismissible fade show" role="alert">
@@ -38,13 +38,6 @@
                             @include('pages.admin.support.inc.comment', ['ticket' => $ticket])
                         </div>                     
                     </div>
-                       
-                    <a href="#">
-                        <i class="mdi mdi-reply"></i> Reply
-                    </a>
-
-                    @include('pages.admin.support.inc.reply', ['ticket' => $ticket])
-
                 </div><!--end col-->
             
                 <div class="col-4">

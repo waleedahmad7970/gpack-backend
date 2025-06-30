@@ -37,7 +37,7 @@
 
 @section('content')
 
-    @include('layouts.partials._breadcrumb', ['title' => "Edit Team Member", 'page' => 'Team Member Edit'])
+    @include('layouts.partials._breadcrumb', ['title' => "Edit Team Member", 'section' => 'Teams', 'page' => 'Edit'])
 
     @if(session()->has('success'))
         <div class="alert alert-success border-0 alert-dismissible fade show" role="alert">
@@ -104,8 +104,8 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <label for="expertise" class="form-label fw-bold">Expertise <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="expertise" name="expertise" value="{{ $member->expertise }}" placeholder="Enter expertise" required />
+                                <label for="expertise" class="form-label fw-bold">Expertise </label>
+                                <input type="text" class="form-control" id="expertise" name="expertise" value="{{ $member->expertise }}" placeholder="Enter expertise" />
                                 <small class="form-text text-muted">e.g. Policy Design Expert, Implementation Lead etc</small>
                             </div>
                         </div>
@@ -216,7 +216,6 @@
 @endsection
 
 @section('script')
-
 
 <script src="{{ asset('admin-assets/plugins/select/selectr.min.js') }}"></script>
 <script>

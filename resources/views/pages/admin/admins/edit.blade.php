@@ -5,7 +5,7 @@
 
 @section('content')
 
-    @include('layouts.partials.admin._breadcrumb', ['title' => "Edit Admin", 'section' => "Settings / Admins", 'page' => 'Edit'])
+    @include('layouts.partials._breadcrumb', ['title' => "Edit Admin", 'section' => "Settings / Admins", 'page' => 'Edit'])
 
     @if(session()->has('success'))
         <div class="alert alert-success border-0 alert-dismissible fade show" role="alert">
@@ -69,22 +69,10 @@
                         <div class="row mb-3">
                             <div class="col-12">
                                 <label for="email" class="form-label fw-bold">Email <span class="text-danger">*</span></label>
-                                <input type="email" class="form-control" id="email" name="email" value="{{ $admin->email }}" placeholder="Enter email" required />
+                                <input type="email" class="form-control" id="email" name="email" value="{{ $admin->email }}" placeholder="Enter email" disabled required />
                                 <div class="invalid-feedback">
                                     Email is a required field.
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-12">
-                                <label for="address" class="form-label fw-bold">Address</label>
-                                <input type="text" class="form-control" id="address" name="address" value="{{ $admin->address }}" placeholder="Enter address" />
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-12">
-                                <label for="phone" class="form-label fw-bold">Phone </label>
-                                <input type="text" class="form-control" id="phone" name="phone" value="{{ $admin->phone }}" placeholder="Enter phone" />
                             </div>
                         </div>
                         <div class="row mb-3">

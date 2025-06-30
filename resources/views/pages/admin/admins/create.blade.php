@@ -5,7 +5,7 @@
 
 @section('content')
 
-    @include('layouts.partials.admin._breadcrumb', ['title' => "Add Admin", 'section' => "Settings / Admins", 'page' => 'Add'])
+    @include('layouts.partials._breadcrumb', ['title' => "Add Admin", 'section' => "Settings / Admins", 'page' => 'Add'])
 
     @if(session()->has('success'))
         <div class="alert alert-success border-0 alert-dismissible fade show" role="alert">
@@ -38,7 +38,7 @@
                             <label for="avatar">Photo</label>
                             <img 
                                 src="{{ asset('admin-assets/images/users/user-vector.png') }}" 
-                                alt="Georgia Construction Co." 
+                                alt="GPack" 
                                 class="thumb-lg rounded mx-3"
                                 id="avatar"
                                 onerror="this.onerror=null;this.src='{{ asset('admin-assets/images/users/user-vector.png') }}'" 
@@ -73,19 +73,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-12">
-                                <label for="address" class="form-label fw-bold">Address</label>
-                                <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}" placeholder="Enter address" />
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-12">
-                                <label for="phone" class="form-label fw-bold">Phone </label>
-                                <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}" placeholder="Enter phone" />
-                            </div>
-                        </div>
-
                         <div class="row mb-3">
                             <div class="col-6">
                                 <label for="password" class="form-label fw-bold">Password <span class="text-danger">*</span></label>

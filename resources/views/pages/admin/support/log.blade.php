@@ -12,7 +12,7 @@
 
 @section('content')
 
-    @include('layouts.partials.admin._breadcrumb', ['title' => "Messages Log", 'section' => "Support", 'page' => 'Log'])
+    @include('layouts.partials._breadcrumb', ['title' => "Messages Log", 'section' => "Support", 'page' => 'Log'])
 
     @if(session()->has('success'))
         <div class="alert alert-success border-0 alert-dismissible fade show" role="alert">
@@ -42,7 +42,7 @@
     <script src="{{ asset('admin-assets/plugins/tabulator/tabulator.min.js') }}"></script>
     <script>
         let table = new Tabulator("#datatable-support", {
-            ajaxURL:"/admin/getAllMessages",
+            ajaxURL:"/support/getAllMessages",
             layout:"fitColumns",      //fit columns to width of table
             responsiveLayout:"collapse",  //hide columns that dont fit on the table
             pagination:"local",       //paginate the data
@@ -50,8 +50,7 @@
             placeholder:"<h6>No Data Available</h6>",
             columns:[                 //define the table columns
                 {title: '#', hozAlign:"left", vertAlign:"middle", width:70, formatter:"rownum"},
-                {title: "User", field: "user", headerFilter: "input", vertAlign:"middle", widthGrow:2},
-                {title: "Subject", field: "subject", headerFilter: "input", vertAlign:"middle", widthGrow:4},
+                {title: "User", field: "user", headerFilter: "input", vertAlign:"middle", widthGrow:3},
                 {title: "Status",  field: "status", hozAlign:"left", vertAlign:"middle", widthGrow:1, formatter:function(cell, formatterParams){
                     if(cell.getValue() === 0) {
                         return '<span class="badge bg-warning">Unread</span>';
@@ -61,7 +60,7 @@
                 }},
                 {title:"Date", field:"date", hozAlign:"left", vertAlign:"middle", widthGrow:1},
                 {title: "Action", field: "details", vertAlign:"middle", widthGrow:1, formatter:function(cell, formatterParams){
-                    return `<a href="/admin/support/${cell.getValue()}"><button class="btn btn-primary btn-sm" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Details</button><a>`;
+                    return `<a href="/support/${cell.getValue()}/details"><button class="btn btn-primary btn-sm" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Details</button><a>`;
                 }}
             ],
         });

@@ -11,9 +11,9 @@
                                 <div class="text-center p-3">
                                     <a href="{{ url('/') }}" class="logo logo-admin">
                                         <img 
-                                            src="{{ asset('admin-assets/images/logos/logo-black.svg') }}" 
+                                            src="{{ asset('admin-assets/images/logos/GPAC.svg') }}" 
                                             height="50" 
-                                            alt="Georgia Construction" 
+                                            alt="GPack" 
                                             class="auth-logo"
                                         />
                                     </a>

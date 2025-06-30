@@ -5,7 +5,7 @@
 
 @section('content')
 
-    @include('layouts.partials.admin._breadcrumb', ['title' => "Change Password", 'section' => "Settings", 'page' => 'Password'])
+    @include('layouts.partials._breadcrumb', ['title' => "Change Password", 'section' => "Settings", 'page' => 'Password'])
 
     @if(session()->has('success'))
         <div class="alert alert-success border-0 alert-dismissible fade show" role="alert">

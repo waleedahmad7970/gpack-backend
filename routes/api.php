@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('page')->group(function () {
+    Route::get('home', [App\Http\Controllers\Api\PageController::class, 'getHomePage']);
+    Route::get('about', [App\Http\Controllers\Api\PageController::class, 'getAboutPage']);
+    Route::get('why-us', [App\Http\Controllers\Api\PageController::class, 'getWhyUsPage']);
+    Route::get('team', [App\Http\Controllers\Api\PageController::class, 'getTeamPage']);
+    Route::get('publication', [App\Http\Controllers\Api\PageController::class, 'getPublicationPage']); 
+    Route::get('approach', [App\Http\Controllers\Api\PageController::class, 'getApproachPage']); 
+    Route::get('contact', [App\Http\Controllers\Api\PageController::class, 'getContactPage']); 
 });
+
+Route::post('contact', [App\Http\Controllers\Api\ContactController::class, 'store']);

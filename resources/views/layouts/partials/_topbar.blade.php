@@ -22,10 +22,10 @@
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <a class="dropdown-item" href="{{-- route('admin.admins.edit', auth()->guard('admin')->user()->id) --}}">
+                    <a class="dropdown-item" href="{{ route('admin.admins.edit', auth()->guard('admin')->user()->id) }}">
                         <i class="ti ti-user font-16 me-1 align-text-bottom"></i> Edit Profile
                     </a>
-                    <a class="dropdown-item" href="{{-- route('admin.password.create') --}}"><i class="ti ti-settings font-16 me-1 align-text-bottom"></i> Password</a>
+                    <a class="dropdown-item" href="{{ route('admin.password.create') }}"><i class="ti ti-settings font-16 me-1 align-text-bottom"></i> Password</a>
                     <div class="dropdown-divider mb-0"></div>
                     <a 
                         class="dropdown-item" 
