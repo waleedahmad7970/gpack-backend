@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
             WhyPageSeeder::class,
             TeamPageSeeder::class,
             PublicationPageSeeder::class,
+            SocialMediaSeeder::class,
+            ContactSeeder::class,
         ]);
     }
 }

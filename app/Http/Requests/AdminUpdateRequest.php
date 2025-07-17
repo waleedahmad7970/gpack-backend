@@ -24,7 +24,7 @@ class AdminUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:191',
             'email' => 'required|email',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ];

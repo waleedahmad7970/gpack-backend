@@ -159,6 +159,8 @@
                                     request()->routeIs('admin.admins.index') 
                                     || request()->routeIs('admin.admins.edit') 
                                     || request()->routeIs('admin.admins.create') 
+                                    || request()->routeIs('admin.socials.index')
+                                    || request()->routeIs('admin.contacts.index')
                                     ? 'navbar-collapse show' : '' 
                                 }}" 
                                 id="sidebarSettings"
@@ -170,8 +172,13 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link {{-- request()->routeIs('admin.shipping-methods.index') || request()->routeIs('admin.shipping-methods.edit') || request()->routeIs('admin.shipping-methods.create') ? 'active' : '' --}}">
+                                    <a href="{{ route('admin.socials.index') }}" class="nav-link {{ request()->routeIs('admin.socials.index') ? 'active' : '' }}">
                                         Social Media
+                                    </a>
+                                </li> 
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.contacts.index') }}" class="nav-link {{ request()->routeIs('admin.contacts.index') ? 'active' : '' }}">
+                                        Contact Info
                                     </a>
                                 </li> 
                             </ul>

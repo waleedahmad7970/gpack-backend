@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/test', function () {
+    return 'Test route working!';
+});
+
+Route::get('/clear-all', function () {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+
+    return "Application caches cleared!";
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -85,6 +99,14 @@ Route::middleware('auth.admin')->group(function() {
     // password
     Route::get('password', [App\Http\Controllers\Admin\PasswordController::class, 'create'])->name('admin.password.create');
     Route::post('password', [App\Http\Controllers\Admin\PasswordController::class, 'store'])->name('admin.password.store');
+    // social media links
+    Route::resource('socials', App\Http\Controllers\Admin\SocialMediaController::class)->names([
+        'index'   => 'admin.socials.index',
+        'update'  => 'admin.socials.update',
+    ]);
+    // contact
+    Route::get('contact-info', [App\Http\Controllers\Admin\ContactController::class, 'index'])->name('admin.contacts.index');
+    Route::put('contact-info/{contact}', [App\Http\Controllers\Admin\ContactController::class, 'update'])->name('admin.contacts.update');
     // admins
     Route::resource('admins', App\Http\Controllers\Admin\AdminController::class)->names([
         'index'   => 'admin.admins.index',
