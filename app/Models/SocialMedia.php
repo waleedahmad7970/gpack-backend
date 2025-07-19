@@ -20,4 +20,14 @@ class SocialMedia extends Model
         'icon',
         'is_active'
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | SCOPES
+    |--------------------------------------------------------------------------
+    */
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', 1);
+    }
 }

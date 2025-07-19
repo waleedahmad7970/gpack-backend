@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('site-data', [App\Http\Controllers\Api\SiteController::class, 'getSiteData']);
+
 Route::prefix('page')->group(function () {
     Route::get('home', [App\Http\Controllers\Api\PageController::class, 'getHomePage']);
     Route::get('about', [App\Http\Controllers\Api\PageController::class, 'getAboutPage']);
