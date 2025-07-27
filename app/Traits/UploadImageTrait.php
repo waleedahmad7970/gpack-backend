@@ -44,9 +44,9 @@ trait UploadImageTrait
     {
         $isDeleted = false;
 
-        if (File::exists($imageUrl)) {
+        if (File::exists(public_path($imageUrl))) {
             // delete image from storage
-            File::delete($imageUrl);
+            File::delete(public_path($imageUrl));
 
             $isDeleted = true;
         }

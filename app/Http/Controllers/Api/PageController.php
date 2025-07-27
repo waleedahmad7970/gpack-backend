@@ -12,6 +12,7 @@ use App\Models\PublicationPage;
 use App\Models\Team;
 use App\Models\TeamPage;
 use App\Models\WhyPage;
+use App\Models\Contact;
 
 class PageController extends Controller
 {
@@ -131,6 +132,10 @@ class PageController extends Controller
     public function getContactPage()
     {
         $data = [];
+
+        $contactInfo = Contact::first();
+
+        $data['contactInfo'] = $contactInfo;
 
         return response()->json([
             'success' => true,
